@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petz</title>
+    <style>
+        body {
+            background-color: rgb(246, 242, 0);
+        }
+        /* E-mail */
+            input[name='e-mail'] {
+                margin-left: 900px;
+                transform: translateY(-170%);
+            }
+            p[name='e-mail'] {
+                margin-left: 840px;
+            }
+        /* Senha */
+        input[name='senha'] {
+                margin-left: 1200px;
+                transform: translateY(-510%);
+            }
+            p[name='senha'] {
+                margin-left: 1145px;
+                transform: translateY(-390%);
+            }
+        /* Buttom de entrar*/
+            button[name='confirmar login'] {
+                transform: translateY(-510%);
+                margin-left: 40px;
+            }
+        /* Background */
+            hr[name='background e-mail e senha'] {
+                background-color: rgb(255, 255, 255);
+                height: 55px;
+                margin-top: -150px;
+                border: none;
+            }
+            hr[name='linha preta'] {
+                background-color: black;
+                height: 5px;
+                margin-top: -8px;
+                border: none;
+            }
+            p[name='Petz background'] {
+                font: 30pt Arial;
+                margin-left: 20px;
+                margin-top: -57px;
+                color: rgb(246, 242, 0);
+                font-weight: bold;
+            }
+    </style>
+</head>
+<body>
+    <p name="e-mail">E-mail</p> <input type="email" id="e-mail" name="e-mail">
+    <p name="senha">Senha</p> <input type="password" id="senha" name="senha">
+    <button name="confirmar login" onclick="login()">Entrar</button>
+    <hr name="background e-mail e senha"> <hr name="linha preta"> <p name="Petz background">Petz</p>
+    <script>
+        function login() {
+            let email = document.getElementById('e-mail').value
+            let senha = document.getElementById('senha').value
+        }
+    </script>
+</body>
+</html>
