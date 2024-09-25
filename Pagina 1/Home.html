@@ -7,35 +7,57 @@
     <style>
         body {
             background-color: rgb(246, 242, 0);
+            overflow-x: hidden;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
         }
         /* E-mail */
             input[name='e-mail'] {
                 margin-left: 900px;
-                transform: translateY(-170%);
+                transform: translateY(-150%); 
+                width: 10%;
+                padding: 1px;
+                box-sizing: border-box;
+                position: absolute;
             }
             p[name='e-mail'] {
                 margin-left: 840px;
+                transform: translateY(20%);
             }
         /* Senha */
-        input[name='senha'] {
-                margin-left: 1200px;
-                transform: translateY(-510%);
+            input[name='senha'] {
+                margin-left: 1150px;
+                transform: translateY(-310%);
+                width: 10%;
+                padding: 1px;
+                box-sizing: border-box;
+                position: absolute;
             }
             p[name='senha'] {
-                margin-left: 1145px;
-                transform: translateY(-390%);
+                margin-left: 1100px;
+                transform: translateY(-160%);
             }
         /* Buttom de entrar*/
-            button[name='confirmar login'] {
-                transform: translateY(-510%);
-                margin-left: 40px;
+            button[id='confirmar login'] {
+                transform: translateY(-195%);
+                margin-left: 1360px;
+                position: absolute;
+                color: rgb(255, 255, 255);
+                background-color: black;
+                border-radius: 10px;
+                padding: 10px 50px;
+                font: Arial;
             }
         /* Background */
             hr[name='background e-mail e senha'] {
                 background-color: rgb(255, 255, 255);
                 height: 55px;
-                margin-top: -150px;
+                width: 100%; 
+                margin-top: -85px;
                 border: none;
+                margin: 10;
             }
             hr[name='linha preta'] {
                 background-color: black;
@@ -44,9 +66,9 @@
                 border: none;
             }
             p[name='Petz background'] {
-                font: 30pt Arial;
+                font: 40pt Arial;
                 margin-left: 20px;
-                margin-top: -57px;
+                margin-top: -70px;
                 color: rgb(246, 242, 0);
                 font-weight: bold;
             }
@@ -55,9 +77,17 @@
 <body>
     <p name="e-mail">E-mail</p> <input type="email" id="e-mail" name="e-mail">
     <p name="senha">Senha</p> <input type="password" id="senha" name="senha">
-    <button name="confirmar login" onclick="login()">Entrar</button>
+    <button id="confirmar login" onclick="login()" onmouseenter="Encima_do_bottom()" onmouseout="Fora_do_bottom()">Entrar</button>
     <hr name="background e-mail e senha"> <hr name="linha preta"> <p name="Petz background">Petz</p>
     <script>
+        function Encima_do_bottom() {
+            let botão = document.getElementById('confirmar login')
+            botão.style.backgroundColor = "blue"
+        }
+        function Fora_do_bottom() {
+            let botão = document.getElementById('confirmar login')
+            botão.style.backgroundColor = "black"
+        }
         function login() {
             let email = document.getElementById('e-mail').value
             let senha = document.getElementById('senha').value
