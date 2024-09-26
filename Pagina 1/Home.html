@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Petz</title>
+    <!--Login-->
     <style>
         body {
             background-color: rgb(246, 242, 0);
@@ -73,25 +74,114 @@
                 font-weight: bold;
             }
     </style>
+    <!--Cadastramento-->
+    <style>
+        div[name='background_p.c'] {
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+            width: 400px;
+            height: 400px;
+            margin-left: 600px;
+            border: 5px solid black;
+            transform: translateY(20%);
+        }
+        hr[name='linha_p.c'] {
+            transform: translateY(-30%);
+            height: 30px;
+            background-color: black;
+            border: none;
+        }
+        h2[name='titulo_p.c'] {
+            color: rgb(255, 254, 253);
+            text-align: center;
+            transform: translateY(-210%);
+            font: Arial;
+            border: none;
+        }
+        h2[name='petz_p.c'] {
+            color: rgb(246, 242, 0);
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+            font: 40pt Arial;
+            font-size: 80px;
+            font-weight: bolder;
+            transform: translateY(-100%);
+            margin-right: 15px;
+        }
+        /* button criar nova conta */
+        button[id='criar_nova_conta'] {
+            background-color: black;
+            color: rgb(255, 255, 255);
+            padding: 20px 50px;
+            border-radius: 10px;
+            font: Arial;
+            transform: translateY(-180%);
+        }
+        button[id='esqueceu_conta'] {
+            background-color: black;
+            color: rgb(255, 255, 255);
+            padding: 20px 45px;
+            border-radius: 10px;
+            font: Arial;
+            transform: translateY(-100%);
+        }
+    </style>
 </head>
 <body>
+    <!--Login-->
     <p name="e-mail">E-mail</p> <input type="email" id="e-mail" name="e-mail">
     <p name="senha">Senha</p> <input type="password" id="senha" name="senha">
-    <button id="confirmar login" onclick="login()" onmouseenter="Encima_do_bottom()" onmouseout="Fora_do_bottom()">Entrar</button>
+    <button id="confirmar login" onclick="login()" onmouseenter="Encima_do_botton()" onmouseout="Fora_do_botton()">Entrar</button>
     <hr name="background e-mail e senha"> <hr name="linha preta"> <p name="Petz background">Petz</p>
     <script>
-        function Encima_do_bottom() {
+        function Encima_do_botton() {
             let botão = document.getElementById('confirmar login')
             botão.style.backgroundColor = "blue"
         }
-        function Fora_do_bottom() {
+        function Fora_do_botton() {
             let botão = document.getElementById('confirmar login')
             botão.style.backgroundColor = "black"
         }
         function login() {
             let email = document.getElementById('e-mail').value
             let senha = document.getElementById('senha').value
+            /*window.location.assign('https://www.youtube.com/')*/
         }
     </script>
+    <!--Cadastramento-->
+    <div name="background_p.c">
+        <hr name="linha_p.c">
+        <h2 name="titulo_p.c">CADASTRAR USUÁRIO</h2>
+        <h2 name="petz_p.c">Petz</h2>
+        <button id="criar_nova_conta" onclick="criar_nova_conta()" onmouseover="Encima_button_c_n()" onmouseout="Fora_do_botton_c_n()">Criar nova conta</button>
+        <button id="esqueceu_conta" onclick="esqueceu_conta()" onmouseover="Encima_button_e_c()" onmouseout="Fora_do_button_e_c()">Esqueceu a conta</button>
+        <script>
+            /*Butão de criar nova conta*/
+            function criar_nova_conta() {
+                let contaNova = document.getElementById("criar_nova_conta")
+                /*window.location.assign('https://www.youtube.com/')*/
+            }
+            function Encima_button_c_n() {
+                let botão = document.getElementById('criar_nova_conta')
+                botão.style.backgroundColor = "green"
+            }
+            function Fora_do_botton_c_n() {
+                let botão = document.getElementById('criar_nova_conta')
+                botão.style.backgroundColor = "black"
+            }
+            /*Butão de esqueceu conta*/
+            function esqueceu_conta() {
+                let esqueceuConta = document.getElementById('esqueceu_conta')
+                /*window.location.assign('https://www.youtube.com/')*/
+            }
+            function Encima_button_e_c() {
+                let botão = document.getElementById('esqueceu_conta')
+                botão.style.backgroundColor = "red"
+            }
+            function Fora_do_button_e_c() {
+                let botão = document.getElementById('esqueceu_conta')
+                botão.style.backgroundColor = "black"
+            }
+        </script>
+    </div>
 </body>
 </html>
