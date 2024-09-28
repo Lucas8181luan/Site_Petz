@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Petz</title>
     <style>
-        body {
+        body[id='corpo'] {
             background: linear-gradient(to right, #fcff62, rgb(246, 242, 0), rgb(246, 242, 0), rgb(246, 242, 0), rgb(246, 242, 0), rgb(246, 242, 0), rgb(246, 242, 0), #fcff62);
             overflow-x: hidden;
             width: 100%;
@@ -22,7 +22,7 @@
             hr[id='linha cabeçalho'] {
                 background-color: black;
                 width: 100%;
-                height: 10px;
+                height: 11px;
                 border: none;
                 transform: translateY(-75%);
             }
@@ -36,34 +36,35 @@
             }
             img[id='pata cabeçalho 1'] {
                 width: 13%;
-                margin-left: 38%;
-                transform: rotate(-16deg) translateY(-356%);
+                margin-left: 31%;
+                transform: rotate(-16deg) translateY(-7%);
             }
             img[id='pata cabeçalho 2'] {
                 width: 13%;
-                margin-left: 47%;
-                transform: rotate(16deg) translateY(-462%);
+                margin-left: 54%;
+                transform: rotate(16deg) translateY(-113%);
             }
             div[id='menu'] {
                 margin-left: 90%;
-                transform: translateY(-1500%);
+                transform: translateY(-880%);
                 width: 0%;
                 hr[nome='barra'] {
                 background-color: black;
                 height: 8px;
                 width: 50px;
                 border: none;
-            }
+                }
             }
     </style>
 </head>
-<body>
+<body id="corpo">
     <!-- Cabeçalho -->
-        <div id="cabeçalho"></div>
+        <div id="cabeçalho">
+            <img src="C:\Users\Lucas Luan\Documents\GitHub\Site_Petz\Pagina 2\img\pata.png" id="pata cabeçalho 1">
+            <img src="C:\Users\Lucas Luan\Documents\GitHub\Site_Petz\Pagina 2\img\pata.png" id="pata cabeçalho 2">
+        </div>
         <hr id="linha cabeçalho">
         <h1 id="cabeçalho Petz">Petz</h1>
-        <img src="C:\Users\Lucas Luan\Documents\GitHub\Site_Petz\Pagina 2\img\pata.png" id="pata cabeçalho 1">
-        <img src="C:\Users\Lucas Luan\Documents\GitHub\Site_Petz\Pagina 2\img\pata.png" id="pata cabeçalho 2">
         <div id="menu" onclick="menu()" onmouseover="Encima_do_menu()" onmouseout="Fora_do_menu()">
             <hr id="barra1" nome="barra">
             <hr id="barra2" nome="barra">
@@ -71,8 +72,74 @@
         </div>
         <script>
             /* Menu */
+            const corpo = document.getElementById('corpo')
+            const novaDiv = document.createElement('div')
+            const parteBranca = document.createElement('div')
+            const butãoSair = document.createElement('button')
+            let clickAllowed = 1
             function menu() {
-                let menu = document.getElementById('menu')
+                let menu1 = document.getElementById('barra1')
+                let menu2 = document.getElementById('barra2')
+                let menu3 = document.getElementById('barra3')
+                /* Opções do menu */
+                if (clickAllowed === 1) {
+                    novaDiv.className = 'div_menu'
+                    corpo.appendChild(novaDiv)
+                    /* Decoração do menu */
+                    novaDiv.style.backgroundColor = 'white'
+                    novaDiv.style.width = "13%"
+                    novaDiv.style.height = "280px"
+                    novaDiv.style.transform = "translateY(-123%)"
+                    novaDiv.style.marginLeft = "85%"
+                    novaDiv.style.border = "5px solid black"
+                    /* Parte branca */
+                        parteBranca.className = 'div_parte_branca'
+                        corpo.appendChild(parteBranca)
+                        /* Decoração da parte branca*/
+                        parteBranca.style.backgroundColor = 'white'
+                        parteBranca.style.width = "14%"
+                        parteBranca.style.marginLeft = "85%"
+                        parteBranca.style.height = "28px"
+                        parteBranca.style.transform = "translateY(-2320%)"
+                    //--------------------------------------
+                    /* Butão de Sair*/
+                    butãoSair.className = 'button_sair'
+                    corpo.appendChild(butãoSair)
+                    /* Função click*/
+                    butãoSair.onclick = Button_sair
+                    function Button_sair() {
+                        let butão = document.getElementsByClassName('button_sair')
+                        /*window.location.assign('https://www.youtube.com/')*/
+                    }
+                    /* Encima do butão */
+                    butãoSair.onmouseover = Button_encima
+                    function Button_encima() {
+                        let butão = document.getElementsByClassName('button_sair')
+                        butãoSair.style.backgroundColor = 'blue'
+                    }
+                    /* Fora do butão */
+                    butãoSair.onmouseout = Button_fora
+                    function Button_fora() {
+                        let butão = document.getElementsByClassName('button_sair')
+                        butãoSair.style.backgroundColor = 'black'
+                    }
+                    /* Decoração do botão */
+                    butãoSair.style.backgroundColor = 'black'
+                    butãoSair.style.height = '40px'
+                    butãoSair.style.width = '11%'
+                    butãoSair.style.marginLeft = '86.3%'
+                    butãoSair.style.transform = 'translateY(-1100%)'
+                    butãoSair.innerText = 'Sair do Site'
+                    butãoSair.style.color = 'white'
+                    //--------------------------------------
+                    /* Desvativa a div */
+                    clickAllowed += 1
+                } else if (clickAllowed === 2) {
+                    corpo.removeChild(novaDiv)
+                    corpo.removeChild(parteBranca)
+                    corpo.removeChild(butãoSair)
+                    clickAllowed -= 1
+                }
             }
             /* Encima do menu */
             function Encima_do_menu() {
@@ -92,7 +159,6 @@
                 menu2.style.backgroundColor = 'black'
                 menu3.style.backgroundColor = 'black'     
             }
-            /* Opções do menu */
         </script>
 </body>
 </html>
