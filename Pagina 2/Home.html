@@ -76,6 +76,8 @@
             const novaDiv = document.createElement('div')
             const parteBranca = document.createElement('div')
             const butãoSair = document.createElement('button')
+            const fotoPerfil = document.createElement('img')
+            const butãoCarrinho = document.createElement('button')
             let clickAllowed = 1
             function menu() {
                 let menu1 = document.getElementById('barra1')
@@ -102,10 +104,10 @@
                         parteBranca.style.height = "28px"
                         parteBranca.style.transform = "translateY(-2320%)"
                     //--------------------------------------
-                    /* Butão de Sair*/
+                    /* Butão de Sair */
                     butãoSair.className = 'button_sair'
                     corpo.appendChild(butãoSair)
-                    /* Função click*/
+                    /* Função click */
                     butãoSair.onclick = Button_sair
                     function Button_sair() {
                         let butão = document.getElementsByClassName('button_sair')
@@ -125,12 +127,52 @@
                     }
                     /* Decoração do botão */
                     butãoSair.style.backgroundColor = 'black'
-                    butãoSair.style.height = '40px'
+                    butãoSair.style.height = '50px'
                     butãoSair.style.width = '11%'
                     butãoSair.style.marginLeft = '86.3%'
-                    butãoSair.style.transform = 'translateY(-1100%)'
+                    butãoSair.style.transform = 'translateY(-910%)'
                     butãoSair.innerText = 'Sair do Site'
                     butãoSair.style.color = 'white'
+                    //--------------------------------------
+                    /* Foto de perfil */
+                    corpo.appendChild(fotoPerfil)
+                    fotoPerfil.src = "C:/Users/Lucas Luan/Documents/GitHub/Site_Petz/Pagina 2/img/foto_de_perfil.png"
+                    fotoPerfil.id = "Foto_perfi"
+                    /* Decoração da foto do perfil */
+                    fotoPerfil.style.width = "auto"
+                    fotoPerfil.style.height = "80px"
+                    fotoPerfil.style.marginLeft = "89%"
+                    fotoPerfil.style.transform = "translateY(-850%)"
+                    //--------------------------------------
+                    /* Butão Carrinho */
+                    butãoCarrinho.className = 'button_carrinho'
+                    corpo.appendChild(butãoCarrinho)
+                    /* Função click */
+                    butãoCarrinho.onclick = Button_carrinho
+                    function Button_carrinho() {
+                        let butão = document.getElementsByClassName('button_carrinho')
+                        /*window.location.assign('https://www.youtube.com/')*/
+                    }
+                    /* Encima do butão */
+                    butãoCarrinho.onmouseover = Button_encima_c
+                    function Button_encima_c() {
+                        let butão = document.getElementsByClassName('button_carrinho')
+                        butãoCarrinho.style.backgroundColor = 'blue'
+                    }
+                    /* Fora do butão */
+                    butãoCarrinho.onmouseout = Button_fora_c
+                    function Button_fora_c() {
+                        let butão = document.getElementsByClassName('button_carrinho')
+                        butãoCarrinho.style.backgroundColor = 'black'
+                    }
+                    /* Decoração do botão */
+                    butãoCarrinho.style.backgroundColor = 'black'
+                    butãoCarrinho.style.height = '50px'
+                    butãoCarrinho.style.width = '11%'
+                    butãoCarrinho.style.marginLeft = '86.3%'
+                    butãoCarrinho.style.transform = 'translateY(-1310%)'
+                    butãoCarrinho.innerText = '🛒 Carrinho'
+                    butãoCarrinho.style.color = 'white'
                     //--------------------------------------
                     /* Desvativa a div */
                     clickAllowed += 1
@@ -138,6 +180,8 @@
                     corpo.removeChild(novaDiv)
                     corpo.removeChild(parteBranca)
                     corpo.removeChild(butãoSair)
+                    corpo.removeChild(fotoPerfil)
+                    corpo.removeChild(butãoCarrinho)
                     clickAllowed -= 1
                 }
             }
