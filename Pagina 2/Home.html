@@ -140,7 +140,7 @@
                     novaDiv.style.backgroundColor = 'white'
                     novaDiv.style.width = "13%"
                     novaDiv.style.height = "280px"
-                    novaDiv.style.transform = "translateY(-123%)"
+                    novaDiv.style.transform = "translateY(-837%)"
                     novaDiv.style.marginLeft = "85%"
                     novaDiv.style.border = "5px solid black"
                     /* Parte branca */
@@ -151,7 +151,7 @@
                         parteBranca.style.width = "14%"
                         parteBranca.style.marginLeft = "85%"
                         parteBranca.style.height = "28px"
-                        parteBranca.style.transform = "translateY(-2320%)"
+                        parteBranca.style.transform = "translateY(-9691.6%)"
                     //--------------------------------------
                     /* Butão de Sair */
                     butãoSair.className = 'button_sair'
@@ -179,7 +179,7 @@
                     butãoSair.style.height = '50px'
                     butãoSair.style.width = '11%'
                     butãoSair.style.marginLeft = '86.3%'
-                    butãoSair.style.transform = 'translateY(-910%)'
+                    butãoSair.style.transform = 'translateY(-5050%)'
                     butãoSair.innerText = 'Sair do Site'
                     butãoSair.style.color = 'white'
                     //--------------------------------------
@@ -191,7 +191,7 @@
                     fotoPerfil.style.width = "auto"
                     fotoPerfil.style.height = "80px"
                     fotoPerfil.style.marginLeft = "89%"
-                    fotoPerfil.style.transform = "translateY(-850%)"
+                    fotoPerfil.style.transform = "translateY(-3441%)"
                     //--------------------------------------
                     /* Butão Carrinho */
                     butãoCarrinho.className = 'button_carrinho'
@@ -219,7 +219,7 @@
                     butãoCarrinho.style.height = '50px'
                     butãoCarrinho.style.width = '11%'
                     butãoCarrinho.style.marginLeft = '86.3%'
-                    butãoCarrinho.style.transform = 'translateY(-1310%)'
+                    butãoCarrinho.style.transform = 'translateY(-5450%)'
                     butãoCarrinho.innerText = '🛒 Carrinho'
                     butãoCarrinho.style.color = 'white'
                     //--------------------------------------
@@ -262,10 +262,51 @@
             </div>
             <img src="C:\Users\Lucas Luan\Documents\GitHub\Site_Petz\Pagina 2\img\foto no meio do texto.png" id="Foto no meio do texto">
         <!-- Corpo 2 -->
-            <div id="Template de ração"> 
+            <div id="Template de ração" onmouseover="Encima_do_t_r()" onmouseout="Fora_do_t_r()"> 
                 <img src="C:\Users\Lucas Luan\Documents\GitHub\Site_Petz\Pagina 2\img\Ração mandai.png" id="Ração mandai">
                 <p id="Texto do corpo 2">Ofereça ao seu pet a nutrição que ele merece com nossa ração, formulada com ingredientes de alta qualidade.<br> Desenvolvida por especialistas, nossa receita balanceada fornece todos os nutrientes essenciais para a saúde e bem-estar<br> do seu animal. Com proteínas de origem animal e grãos integrais, garantimos uma digestão eficiente e energia sustentada<br> ao longo do dia. As vitaminas e minerais presentes na formulação ajudam a fortalecer o sistema imunológico, protegendo<br> seu pet contra doenças. A saúde da pele e do pelo é igualmente importante; nossa ração contém ácidos graxos essenciais<br> que promovem um pelo brilhante e saudável. Cada croquete é pensado para ser saboroso, agradando até os animais mais<br> exigentes. Oferecemos opções específicas para diferentes idades e tamanhos, atendendo às necessidades nutricionais de<br> filhotes, adultos e cães mais velhos. Ao escolher nossa ração, você investe na saúde e na felicidade do seu companheiro.<br> Veja a diferença que uma alimentação de qualidade pode fazer. Escolha o melhor para o seu pet e proporcione a ele uma<br> vida ativa e cheia de vitalidade!</p>
             </div>
+            <script>
+                const divTemplate = document.getElementById('Template de ração')
+                const escdFoto = document.createElement('div')
+                const imgNovaEncima = document.createElement('img')
+                /* Encima do Template */
+                    function Encima_do_t_r() {
+                        let t_r = document.getElementById("Template de ração")
+                        t_r.style.backgroundColor = 'blue'
+                        t_r.style.color = 'white'
+                        t_r.style.border = '10px solid white'
+                        /* Esconder foto */
+                        escdFoto.className = 'esconder_foto'
+                        divTemplate.appendChild(escdFoto)
+                        /* Decoração esconder foto */
+                        escdFoto.style.height = '287px'
+                        escdFoto.style.width = '13%'
+                        escdFoto.style.backgroundColor = 'black'
+                        escdFoto.style.marginLeft = '2.8%'
+                        escdFoto.style.transform = 'translateY(-222%)'
+                        escdFoto.style.backgroundColor = 'blue'
+                        /* Imagem Encima */
+                        imgNovaEncima.className = 'imagem_nova'
+                        divTemplate.appendChild(imgNovaEncima)
+                        imgNovaEncima.src = 'C:/Users/Lucas Luan/Documents/GitHub/Site_Petz/Pagina 2/img/Ração cão de guarda.png'
+                        imgNovaEncima.id = 'Ração_cão_de_guarda'
+                        /* Decoração de imagem nova*/
+                        imgNovaEncima.style.height = '318px'
+                        imgNovaEncima.style.width = 'auto'
+                        imgNovaEncima.style.marginLeft = '-0.2%'
+                        imgNovaEncima.style.transform = 'translateY(-294.7%)'
+                    }
+                /* Fora do Template */
+                    function Fora_do_t_r() {
+                        let t_r = document.getElementById("Template de ração")
+                        t_r.style.backgroundColor = 'white'
+                        t_r.style.color = 'black'
+                        t_r.style.border = '10px solid black'
+                        divTemplate.removeChild(escdFoto)
+                        divTemplate.removeChild(imgNovaEncima)
+                    }
+            </script>
         <!-- Corpo 3 -->
 </body>
 </html>
