@@ -40,9 +40,10 @@
                     novaDiv.style.backgroundColor = 'white'
                     novaDiv.style.width = "13%"
                     novaDiv.style.height = "280px"
-                    novaDiv.style.transform = "translateY(-860%)"
+                    novaDiv.style.transform = "translateY(-957.2%)"
                     novaDiv.style.marginLeft = "85%"
                     novaDiv.style.border = "5px solid black"
+                    novaDiv.style.position = "absolute"
                     /* Parte branca */
                         parteBranca.className = 'div_parte_branca'
                         corpo.appendChild(parteBranca)
@@ -51,7 +52,8 @@
                         parteBranca.style.width = "14%"
                         parteBranca.style.marginLeft = "85%"
                         parteBranca.style.height = "24px"
-                        parteBranca.style.transform = "translateY(-11624.6%)"
+                        parteBranca.style.transform = "translateY(-11627%)"
+                        parteBranca.style.position = "absolute"
                     //--------------------------------------
                     /* Butão de Sair */
                     butãoSair.className = 'button_sair'
@@ -79,9 +81,10 @@
                     butãoSair.style.height = '50px'
                     butãoSair.style.width = '11%'
                     butãoSair.style.marginLeft = '86.3%'
-                    butãoSair.style.transform = 'translateY(-5180%)'
+                    butãoSair.style.transform = 'translateY(-5110%)'
                     butãoSair.innerText = 'Sair do Site'
                     butãoSair.style.color = 'white'
+                    butãoCarrinho.style.position = "absolute"
                     //--------------------------------------
                     /* Foto de perfil */
                     corpo.appendChild(fotoPerfil)
@@ -91,7 +94,7 @@
                     fotoPerfil.style.width = "auto"
                     fotoPerfil.style.height = "80px"
                     fotoPerfil.style.marginLeft = "89%"
-                    fotoPerfil.style.transform = "translateY(-3520%)"
+                    fotoPerfil.style.transform = "translateY(-3490%)"
                     //--------------------------------------
                     /* Butão Carrinho */
                     butãoCarrinho.className = 'button_carrinho'
@@ -119,9 +122,10 @@
                     butãoCarrinho.style.height = '50px'
                     butãoCarrinho.style.width = '11%'
                     butãoCarrinho.style.marginLeft = '86.3%'
-                    butãoCarrinho.style.transform = 'translateY(-5580%)'
+                    butãoCarrinho.style.transform = 'translateY(-5518%)'
                     butãoCarrinho.innerText = '🛒 Carrinho'
                     butãoCarrinho.style.color = 'white'
+                    butãoCarrinho.style.position = "relative"
                     //--------------------------------------
                     /* Desvativa a div */
                     clickAllowed += 1
@@ -213,12 +217,44 @@
             <p id="Ração preço 1 texto"> R$140,00</p>
             <img src="C:\Users\Lucas Luan\Documents\GitHub\Site_Petz\Pagina 2\img\Ração receita especial.png" alt="ração 2" id="Ração preço 2">
             <p id="Ração preço 2 texto"> R$159,99</p>
+            <img src="C:\Users\Lucas Luan\Documents\GitHub\Site_Petz\Pagina 2\img\Ração maikao.png" alt="Ração maikao" id="Ração preço 3">
+            <p id="Ração preço 3 texto"> R$146,50</p>
         </section>
-        <!-- Roda pé 
-        <footer>
-            <div id="Roda pé">
-
+        <!-- Roda pé -->
+        <footer id="Rp">
+            <div id="Roda pé"> 
+                <hr id="linha preta roda pé">
+                <h2 id="whatsapp" onclick="zap()" onmouseover="Encima_zap()" onmouseout="Fora_zap()">&#x1F4F1 Whatsapp: (xx) xxxxx - xxxx</h2>
+                <h2 id="E-mail" onclick="email()" onmouseover="Encima_email()" onmouseout="Fora_email()">&#x2709 E-mail: xxxxxxxx@hotmail.com</h2>
             </div>
-        </footer> -->
+        </footer>
+        <script>
+            /* Zap */
+            function Encima_zap() {
+                let zap = document.getElementById(id="whatsapp")
+                zap.style.color = "blue"
+            }
+            function Fora_zap() {
+                let zap = document.getElementById(id="whatsapp")
+                zap.style.color = "black"
+            }
+            function zap() {
+                let zap = document.getElementById(id="whatsapp")
+                /*window.location.assign('https://www.youtube.com/')*/
+            }
+            /* E-mail */
+            function Encima_email() {
+                let email = document.getElementById(id="E-mail")
+                email.style.color = "blue"
+            }
+            function Fora_email() {
+                let email = document.getElementById(id="E-mail")
+                email.style.color = "black"
+            }
+            function email() {
+                let email = document.getElementById(id="E-mail")
+                /*window.location.assign('https://www.youtube.com/')*/
+            }
+        </script>
 </body>
 </html>
